@@ -1,0 +1,55 @@
+@import 'src/app/app.component.scss';
+// @import 'src/app/app.component.scss';
+
+.demo-app-header {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.demo-container,
+.demo-sidenav {
+  //width: 180px;
+  //position: fix;
+  padding-top: 64px;
+  height: 100%;
+}
+
+mat-sidenav-content{
+  background-color: #fff;
+  width: 100%;
+
+  padding-top: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+mat-list{
+  width: 180px;
+  .mat-list-item {
+    cursor: pointer; // 當滑鼠移動過去改變游標
+
+    // 當滑鼠移動過去
+    &:hover {
+      color: rgb(40, 40, 40);
+      background-color: rgba(0, 0, 0, 0.08);
+
+      .mat-list-icon {
+        color: #6e6e6e;
+        // color: #3f51b5;
+      }
+    }
+
+    //當選擇了該列表，保留型態
+    &.active {
+      color: #000;
+      background-color: rgba(0, 0, 0, 0.09);
+      .mat-list-icon {
+        color: #000;
+        // color: #3f51b5;
+      }
+    }
+  }
+}
+
+
