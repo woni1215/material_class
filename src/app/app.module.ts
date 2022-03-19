@@ -30,11 +30,17 @@ import { MatSelectModule} from '@angular/material/select';
 //router
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './form/form.component';
+import { DepartmentComponent } from './department/department.component';
+import { PositionComponent } from './position/position.component';
+import { ManagerComponent } from './manager/manager.component';
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
-    FormComponent
+    FormComponent,
+    DepartmentComponent,
+    PositionComponent,
+    ManagerComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +69,15 @@ import { FormComponent } from './form/form.component';
     MatSelectModule,
     RouterModule.forRoot([
       {path:"form",component:FormComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"department",component:DepartmentComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"position",component:PositionComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"manager",component:ManagerComponent}
     ])
   ],
   providers: [],

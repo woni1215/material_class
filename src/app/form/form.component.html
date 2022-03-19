@@ -15,11 +15,11 @@
             <mat-option value="two">資管二乙</mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>學生學號</mat-label>
           <input matInput>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>學生姓名</mat-label>
           <input matInput>
         </mat-form-field>
@@ -28,6 +28,27 @@
     <div class="col-lg-12">
       <mat-card>
         <h2 class="card-title">學生成績</h2>
+        <mat-card-actions>
+          <button mat-raised-button color="primary">
+            <mat-icon>add</mat-icon>
+          </button>
+        </mat-card-actions>
+        <mat-form-field appearance="outline">
+          <mat-label>科目</mat-label>
+          <mat-select>
+            <mat-option value="one">國文</mat-option>
+            <mat-option value="two">數學
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>期中考成績</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>期末考成績</mat-label>
+          <input matInput>
+        </mat-form-field>
       </mat-card>
     </div>
   </div>
