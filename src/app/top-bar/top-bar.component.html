@@ -20,8 +20,8 @@
     </a>
 </div> -->
 <mat-toolbar color="primary" class="demo-app-header" role="banner"><!--color="primary"是material預設色彩-->
-  <button mat-raised-button (click)="openDialog()">
-    <mat-icon>add</mat-icon>
+  <button mat-icon-button (click)="sideNav.toggle()">
+    <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon>
   </button>
   <img
     width="40"

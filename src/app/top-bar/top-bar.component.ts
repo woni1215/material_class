@@ -15,7 +15,7 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.arrayValue()
-    this.openDialog()
+    // this.openDialog()
   }
   constructor(public dialog: MatDialog) {}
   openDialog() {

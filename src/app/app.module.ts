@@ -25,7 +25,7 @@ import { MatCheckboxModule} from '@angular/material/checkbox';//checkbox
 import { MatGridListModule} from '@angular/material/grid-list';//gridlist
 import { MatStepperModule} from '@angular/material/stepper';//stepper
 import { MatDialogModule} from '@angular/material/dialog';//dialog
-import { MatDialog } from '@angular/material/dialog';
+// import { MatDialog } from '@angular/material/dialog';
 import { MatRadioModule} from '@angular/material/radio';//radio
 import { MatTabsModule} from '@angular/material/tabs';//tabs
 import { MatSelectModule} from '@angular/material/select';
@@ -71,7 +71,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatGridListModule,
     MatStepperModule,
     MatDialogModule,
-    MatDialog,
+    // MatDialog,
     MatRadioModule,
     MatTabsModule,
     MatSelectModule,
