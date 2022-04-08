@@ -7,13 +7,35 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 8px 0;
+  text-align: center;
+  margin: 5px 0 20px 0;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.example-section {
+  margin: 12px 0;
+}
+
+.example-margin {
+  margin: 0 12px;
 }
 
 p {
@@ -83,6 +105,10 @@ svg.material-icons:not(:last-child) {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 16px;
+}
+
+.card-title{
+  text-align: center;
 }
 
 .card {

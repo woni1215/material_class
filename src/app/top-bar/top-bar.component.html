@@ -20,8 +20,8 @@
     </a>
 </div> -->
 <mat-toolbar color="primary" class="demo-app-header" role="banner"><!--color="primary"是material預設色彩-->
-  <button mat-icon-button (click)="sideNav.toggle()">
-    <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon><!--如果sideNav打開，mat-icon變close-->
+  <button mat-raised-button (click)="openDialog()">
+    <mat-icon>add</mat-icon>
   </button>
   <img
     width="40"
@@ -30,10 +30,23 @@
   />
   <span>成績系統</span>
   <div class="spacer"></div><!--加入空格，可以把icon推到右邊-->
-  <span><button mat-button><mat-icon>exit_to_app</mat-icon></button></span>
+  <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
+    <!-- <mat-menu #messageMenu="matMenu">
+      <button mat-menu-item>{{menuItem[0].content}}</button>
+      <button mat-menu-item>{{menuItem[1].content}}</button>
+    </mat-menu> -->
+    <mat-menu #messageMenu="matMenu">
+      <button mat-menu-item *ngFor="let item of menuItem "routerLink="{{item.router}}">
+        {{item.content}}
+      </button>
+    </mat-menu>
+<!-- <button mat-menu-item *ngFor="let item of menuItem_content">{{item}}</button> -->
+    <mat-icon>message</mat-icon>
+  </button>
+  <button mat-button><mat-icon>exit_to_app</mat-icon></button>
 </mat-toolbar >
 <mat-sidenav-container class="demo-container">
-  <mat-sidenav #sideNav mode="side" class="demo-sidenav">
+  <mat-sidenav #sideNav mode="side" class="demo-sidenav"><!--加position="end"變右邊導覽列-->
     <mat-list mode="side">
       <mat-list-item mat-list-item routerLink="manager" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>settings</mat-icon>
@@ -42,20 +55,19 @@
       <mat-divider></mat-divider>
 
       <mat-list-item mat-list-item routerLink="form" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <mat-icon mat-list-icon>people</mat-icon>
+        <mat-icon mat-list-icon>view_list</mat-icon>
         <div mat-line>表單</div>
       </mat-list-item>
 
-      <mat-list-item mat-list-item routerLink="department" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <mat-icon mat-list-icon>people</mat-icon>
-        <div mat-line>部門</div>
+      <mat-list-item mat-list-item routerLink="score" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>view_list</mat-icon>
+        <div mat-line>學生成績表格</div>
       </mat-list-item>
 
       <mat-list-item mat-list-item routerLink="position" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>people</mat-icon>
         <div mat-line>職稱</div>
       </mat-list-item>
-
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
