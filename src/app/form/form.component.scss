@@ -1,11 +1,2 @@
-mat-card{
-  margin-top: 10px;
+@import 'src/app/app.component.scss';
 
-  .card-title{
-    color:rgb(97, 94, 94);
-  }
-
-  mat-form-field{
-    margin: 10px;
-  }
-}

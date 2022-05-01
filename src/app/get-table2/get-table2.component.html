@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="PDataSource">
+  <!-- id -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>id.</th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+  <!-- userId -->
+  <ng-container matColumnDef="userId">
+    <th mat-header-cell *matHeaderCellDef>userId</th>
+    <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+  </ng-container>
+  <!-- title -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef>title</th>
+    <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+  </ng-container>
+  <ng-container matColumnDef="btn_edit">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="edit(element.userId,element.title)">
+      <!--element取該列的userId及title-->
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="Col"></tr>
+  <tr mat-row *matRowDef="let row; columns: Col;"></tr>
+</table>
+
+<mat-paginator #paginator [length]="totalCount" [pageIndex]="0" [pageSize]="5" [pageSizeOptions]="[5, 10, 15]"
+  [showFirstLastButtons]="true">
+</mat-paginator>

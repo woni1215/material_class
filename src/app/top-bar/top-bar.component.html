@@ -36,7 +36,7 @@
       <button mat-menu-item>{{menuItem[1].content}}</button>
     </mat-menu> -->
     <mat-menu #messageMenu="matMenu">
-      <button mat-menu-item *ngFor="let item of menuItem "routerLink="{{item.router}}">
+      <button mat-menu-item *ngFor="let item of menuItem" routerLink="{{item.router}}">
         {{item.content}}
       </button>
     </mat-menu>
@@ -82,6 +82,11 @@
       <mat-list-item mat-list-item routerLink="GetTable" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
         <div mat-line>Get Table</div>
+      </mat-list-item>
+
+      <mat-list-item mat-list-item routerLink="GetTable2" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>view_list</mat-icon>
+        <div mat-line>Get Table2</div>
       </mat-list-item>
     </mat-list>
   </mat-sidenav>
