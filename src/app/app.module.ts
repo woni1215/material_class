@@ -14,12 +14,12 @@ import { MatInputModule } from '@angular/material/input';//input
 import { MatIconModule } from '@angular/material/icon';//icon
 import { MatToolbarModule } from '@angular/material/toolbar';//toolbar
 import { MatFormFieldModule,MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';//form-field
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';//formGroup出錯加 雙向連結要加FormsModule
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';//雙向連結要加FormsModule
 import { MatSidenavModule } from '@angular/material/sidenav';//sidemodule
 import { MatTableModule } from '@angular/material/table';//table
 import { MatListModule } from '@angular/material/list';//List
 import { MatSortModule } from '@angular/material/sort';//sort
-import { MatPaginatorModule, MatPaginatorIntl } from '@angular/material/paginator';//paginator
+import { MatPaginatorModule } from '@angular/material/paginator';//paginator
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE, MAT_DATE_LOCALE_FACTORY } from '@angular/material/core';
@@ -35,6 +35,7 @@ import { MatSelectModule } from '@angular/material/select';
 
 //primeng
 import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 
 //router
 import { RouterModule } from '@angular/router';
@@ -43,15 +44,17 @@ import { FormComponent } from './form/form.component';
 import { PositionComponent } from './position/position.component';
 import { ManagerComponent } from './manager/manager.component';
 import { SurveyComponent } from './survey/survey.component';
-import { ScoreComponent } from './score/score.component';
+import { TableComponemt } from './table/table.component';
 import { DialogComponent } from './form/dialog/dialog.component';
 import { ShopComponent } from './shop/shop.component';
 import { AddCartDialogComponent } from './shop/add-cart-dialog/add-cart-dialog.component';
 import { AppleDialogComponent } from './shop/apple-dialog/apple-dialog.component';
 import { GetTableComponent } from './get-table/get-table.component';
-import { PrimngComponent } from './primng/primng.component';
+import { PrimengComponemt } from './primeng/primeng.component';
 import { GetTable2Component } from './get-table2/get-table2.component';
 import { EditDialogComponent } from './get-table2/edit-dialog/edit-dialog.component';
+import { PostApiComponent } from './post-api/post-api.component';
+import { PatchApiComponent } from './patch-api/patch-api.component';
 
 export const TW_FORMATS = {
   parse: {
@@ -73,15 +76,17 @@ export const TW_FORMATS = {
     PositionComponent,
     ManagerComponent,
     SurveyComponent,
-    ScoreComponent,
+    TableComponemt,
     DialogComponent,
     ShopComponent,
     AddCartDialogComponent,
     AppleDialogComponent,
-    PrimngComponent,
+    PrimengComponemt,
     GetTableComponent,
     GetTable2Component,
-    EditDialogComponent
+    EditDialogComponent,
+    PostApiComponent,
+    PatchApiComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,14 +119,15 @@ export const TW_FORMATS = {
     MatExpansionModule,
     MatTreeModule,
     ButtonModule,
-    HttpClientModule,
+    ToastModule,
+    HttpClientModule,//需在BrowserModule之後
     FormsModule,
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {path:"form",component:FormComponent}
     ]),
     RouterModule.forRoot([
-      {path:"score",component:ScoreComponent}
+      {path:"table",component:TableComponemt}
     ]),
     RouterModule.forRoot([
       {path:"position",component:PositionComponent}
@@ -136,7 +142,7 @@ export const TW_FORMATS = {
       {path:"shop",component:ShopComponent}
     ]),
     RouterModule.forRoot([
-      {path:"primng",component:PrimngComponent}
+      {path:"primeng",component:PrimengComponemt}
     ]),
     RouterModule.forRoot([
       {path:"GetTable",component:GetTableComponent}
@@ -144,13 +150,18 @@ export const TW_FORMATS = {
     RouterModule.forRoot([
       {path:"GetTable2",component:GetTable2Component}
     ]),
-
+    RouterModule.forRoot([
+      {path:"postApi",component:PostApiComponent}
+    ]),
+    RouterModule.forRoot([
+      {path:"patchApi",component:PatchApiComponent}
+    ]),
   ],
 
   providers: [
     // {provide: MAT_DATE_LOCALE, useValue: 'zh-TW'},//改成中文
     { provide: MAT_DATE_FORMATS, useValue: TW_FORMATS },
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}}
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'} }
   ],
   bootstrap: [AppComponent]
 })

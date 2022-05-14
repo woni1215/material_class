@@ -1,6 +1,6 @@
-<table mat-table [dataSource]="PDataSource">
+<table mat-table [dataSource]="PDataSource" class="mat-elevation-z8">
   <!-- id -->
-  <ng-container matColumnDef="id">
+  <ng-container matColumnDef="id" >
     <th mat-header-cell *matHeaderCellDef>id.</th>
     <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
@@ -18,7 +18,7 @@
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let element">
       <button mat-raised-button color="primary" (click)="edit(element.userId,element.title)">
-      <!--element取該列的userId及title-->
+        <!--element取該列的userId及title-->
         <mat-icon>edit</mat-icon>
       </button>
     </td>

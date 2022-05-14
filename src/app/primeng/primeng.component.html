@@ -1,0 +1,58 @@
+<h1>PrimeNG</h1>
+<mat-card>
+  <div class="row">
+    <div class="col-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+        <input class="form-control" type="text" pInputText placeholder="Username">
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">$</span>
+        <input class="form-control" type="text" pInputText placeholder="Price">
+        <span class="p-inputgroup-addon">.00</span>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">www</span>
+        <input class="form-control" type="text" pInputText placeholder="Website">
+      </div>
+    </div>
+  </div>
+  <div class="col-12"><textarea rows="5" cols="30" pInputTextarea class="form-control"></textarea></div>
+  <div class="col-12"><p-button label="Submit" (onClick)="sweetalert2()"></p-button></div>
+</mat-card>
+<mat-card>
+  <p-toast></p-toast>
+  <p-toast position="top-left" key="tl"></p-toast>
+  <p-toast position="top-center" key="tc"></p-toast>
+  <p-toast position="bottom-center" key="bc"></p-toast>
+
+  <p-toast position="bottom-center" key="c" (onClose)="onReject()" [baseZIndex]="5000">
+    <ng-template let-message pTemplate="message">
+      <div class="flex flex-column" style="flex: 1">
+        <div class="text-center">
+          <i class="pi pi-exclamation-triangle" style="font-size: 3rem"></i>
+          <h4>{{message.summary}}</h4>
+          <p>{{message.detail}}</p>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <button type="button" pButton (click)="onConfirm()" label="Yes" class="p-button-success"></button>
+          </div>
+          <div class="col-6">
+            <button type="button" pButton (click)="onReject()" label="No" class="p-button-secondary"></button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-toast>
+  <button type="button" pButton pRipple (click)="clear()" icon="pi pi-times" label="Clear"></button>
+  <button type="button" pButton pRipple (click)="showConfirm()" label="Confirm" class="ui-button-warning"></button>
+  <button type="button" pButton pRipple (click)="showBottomCenter()" label="Bottom Center"
+    class="p-button-success"></button>
+</mat-card>

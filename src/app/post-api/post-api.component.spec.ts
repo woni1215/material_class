@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PrimngComponent } from './primng.component';
+import { PostApiComponent } from './post-api.component';
 
-describe('PrimngComponent', () => {
-  let component: PrimngComponent;
-  let fixture: ComponentFixture<PrimngComponent>;
+describe('PostApiComponent', () => {
+  let component: PostApiComponent;
+  let fixture: ComponentFixture<PostApiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PrimngComponent ]
+      declarations: [ PostApiComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PrimngComponent);
+    fixture = TestBed.createComponent(PostApiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

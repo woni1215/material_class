@@ -12,20 +12,21 @@ export class EditDialogComponent implements OnInit {
   editForm: FormGroup;
   constructor(
     private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) private data: any
+    @Inject(MAT_DIALOG_DATA)
+    private data: any
   ) {
     this.editForm = this.fb.group({
-      title: new FormControl(),
       userId: new FormControl(),
+      title: new FormControl(),
     });
   }
-  editData:any
+  editData: any
   ngOnInit(): void {
     this.editForm = this.fb.group({
-      title: new FormControl(),
       userId: new FormControl(),
+      title: new FormControl(),
     });
-    this.editData=this.data; //data是在get-table2裡edit宣告的data
+    this.editData = this.data; //data是在get-table2裡edit宣告的data
   }
 
 }

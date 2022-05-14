@@ -27,7 +27,7 @@ export class GetTable2Component implements OnInit {
   totalCount: any
   PData: any//接資料的表格變數
   PDataSource = new MatTableDataSource() //宣告表格
-  Col = ['id', 'userId', 'title','btn_edit'] //欄位
+  Col = ['id', 'userId', 'title', 'btn_edit'] //欄位
 
   //取得all user資料
   getAllApiRequest(): void {
@@ -46,11 +46,11 @@ export class GetTable2Component implements OnInit {
     dataSource.paginator = this.paginator;
   }
 
-  edit(userId:any,title:any){
-    this.dialog.open(EditDialogComponent,{
-      data:{ //JSON格式
-        userId:userId,
-        title:title
+  edit(userId: any, title: any) {
+    this.dialog.open(EditDialogComponent, {
+      data: { //JSON格式
+        userId: userId,
+        title: title
       }
     })
   }

@@ -19,17 +19,16 @@
       </svg>
     </a>
 </div> -->
-<mat-toolbar color="primary" class="demo-app-header" role="banner"><!--color="primary"是material預設色彩-->
+<mat-toolbar color="primary" class="demo-app-header" role="banner">
+  <!--color="primary"是material預設色彩-->
   <button mat-icon-button (click)="sideNav.toggle()">
     <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon>
   </button>
-  <img
-    width="40"
-    alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
-  />
+  <img width="40" alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
   <span>成績系統</span>
-  <div class="spacer"></div><!--加入空格，可以把icon推到右邊-->
+  <div class="spacer"></div>
+  <!--加入空格，可以把icon推到右邊-->
   <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
     <!-- <mat-menu #messageMenu="matMenu">
       <button mat-menu-item>{{menuItem[0].content}}</button>
@@ -40,15 +39,19 @@
         {{item.content}}
       </button>
     </mat-menu>
-<!-- <button mat-menu-item *ngFor="let item of menuItem_content">{{item}}</button> -->
+    <!-- <button mat-menu-item *ngFor="let item of menuItem_content">{{item}}</button> -->
     <mat-icon>message</mat-icon>
   </button>
-  <button mat-button><mat-icon>exit_to_app</mat-icon></button>
-</mat-toolbar >
+  <button mat-icon-button>
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
 <mat-sidenav-container class="demo-container">
-  <mat-sidenav #sideNav mode="side" class="demo-sidenav"><!--加position="end"變右邊導覽列-->
+  <mat-sidenav #sideNav mode="side" class="demo-sidenav">
+    <!--加position="end"變右邊導覽列-->
     <mat-list mode="side">
-      <mat-list-item mat-list-item routerLink="manager" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <mat-list-item mat-list-item routerLink="manager" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>settings</mat-icon>
         <div mat-line>管理員選單</div>
       </mat-list-item>
@@ -59,12 +62,14 @@
         <div mat-line>表單</div>
       </mat-list-item>
 
-      <mat-list-item mat-list-item routerLink="score" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <mat-list-item mat-list-item routerLink="table" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
-        <div mat-line>學生成績表格</div>
+        <div mat-line>Table</div>
       </mat-list-item>
 
-      <mat-list-item mat-list-item routerLink="position" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <mat-list-item mat-list-item routerLink="position" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>people</mat-icon>
         <div mat-line>職稱</div>
       </mat-list-item>
@@ -73,20 +78,34 @@
         <mat-icon mat-list-icon>shopping_cart</mat-icon>
         <div mat-line>購物</div>
       </mat-list-item>
-
-      <mat-list-item mat-list-item routerLink="primng" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <mat-icon mat-list-icon>view_list</mat-icon>
-        <div mat-line>primng</div>
+      <mat-list-item mat-list-item routerLink="primeng" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>dashboard</mat-icon>
+        <div mat-line>primeng</div>
       </mat-list-item>
 
-      <mat-list-item mat-list-item routerLink="GetTable" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <mat-list-item mat-list-item routerLink="GetTable" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
         <div mat-line>Get Table</div>
       </mat-list-item>
 
-      <mat-list-item mat-list-item routerLink="GetTable2" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+      <mat-list-item mat-list-item routerLink="GetTable2" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
         <div mat-line>Get Table2</div>
+      </mat-list-item>
+
+      <mat-list-item mat-list-item routerLink="postApi" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>view_list</mat-icon>
+        <div mat-line>PostApi</div>
+      </mat-list-item>
+
+      <mat-list-item mat-list-item routerLink="patchApi" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>view_list</mat-icon>
+        <div mat-line>PatchApi</div>
       </mat-list-item>
     </mat-list>
   </mat-sidenav>

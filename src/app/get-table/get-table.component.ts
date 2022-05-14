@@ -32,9 +32,11 @@ export class GetTableComponent implements OnInit {
       .subscribe(Request => {
         this.PData = Request.body.project
         this.totalCount = Request.body.total
+        this.showData(this.PDataSource, this.PData)
         console.log(this.totalCount)
         console.log(this.PData)
-        this.showData(this.PDataSource, this.PData)
+        console.log(this.PDataSource)
+        // this.showData(this.PDataSource, this.PData)
       })
   }
 
@@ -43,6 +45,7 @@ export class GetTableComponent implements OnInit {
     let id = 1
     this.HttpApi.getAPIRequest(id)
       .subscribe(Request => {
+        this.PData = Request
         console.log(Request)
       })
   }
