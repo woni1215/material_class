@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { GetTable2Component } from './get-table2.component';
 
-describe('GetTable2Component', () => {
-  let component: GetTable2Component;
-  let fixture: ComponentFixture<GetTable2Component>;
+import { CalculateComponent } from './calculate.component';
+
+describe('CalculateComponent', () => {
+  let component: CalculateComponent;
+  let fixture: ComponentFixture<CalculateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GetTable2Component ]
+      declarations: [ CalculateComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GetTable2Component);
+    fixture = TestBed.createComponent(CalculateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

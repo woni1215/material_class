@@ -20,10 +20,10 @@ export class GetTableComponent implements OnInit {
   ngOnInit(): void {
     this.getAllUser()
     this.getAPIRequest()
-    //this.getAllApiRequest()
+    // this.getAllApiRequest()
     // this.postAPIRequest()
     // this.patchAPIRequest()
-    // this.deleteAPIRequest()
+    this.deleteAPIRequest()
   }
   totalCount: any
   //取得專案資料

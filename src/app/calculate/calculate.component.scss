@@ -1,0 +1,9 @@
+@import 'src/app/app.component.scss';
+mat-form-field{
+  width: 350px;
+}
+.bigNumberMultiply {
+  mat-form-field {
+    width: 100%;
+  }
+}

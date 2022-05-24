@@ -7,11 +7,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 
 @Component({
-  selector: 'app-get-table2',
-  templateUrl: './get-table2.component.html',
-  styleUrls: ['./get-table2.component.scss']
+  selector: 'app-get-api',
+  templateUrl: './get-api.component.html',
+  styleUrls: ['./get-api.component.scss']
 })
-export class GetTable2Component implements OnInit {
+export class GetApiComponent implements OnInit {
 
   @ViewChild('paginator') paginator!: MatPaginator;//單引號中的paginator對應到html的#paginator(名稱要相同)
   @ViewChild(MatSort) sort!: MatSort;
@@ -54,4 +54,5 @@ export class GetTable2Component implements OnInit {
       }
     })
   }
+
 }

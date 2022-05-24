@@ -1,0 +1,34 @@
+<mat-tab-group mat-stretch-tabs dynamicHeight>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon>article</mat-icon>
+      Get
+    </ng-template>
+    <div class="col">
+      <app-get-api></app-get-api>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon>post_add</mat-icon>
+      Post
+    </ng-template>
+    <div class="col">
+      <app-post-api></app-post-api>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon>edit</mat-icon>
+      Patch
+    </ng-template>
+    <app-patch-api></app-patch-api>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon>delete</mat-icon>
+      Delete
+    </ng-template>
+    <app-delete-api></app-delete-api>
+  </mat-tab>
+</mat-tab-group>

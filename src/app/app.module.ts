@@ -9,11 +9,12 @@ import { MatSliderModule } from '@angular/material/slider';//加入material
 import { MatMenuModule } from '@angular/material/menu';//menu
 import { MatCardModule } from '@angular/material/card';//card
 import { MatButtonModule } from '@angular/material/button';//button
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';//input
 import { MatInputModule } from '@angular/material/input';//input
 import { MatIconModule } from '@angular/material/icon';//icon
 import { MatToolbarModule } from '@angular/material/toolbar';//toolbar
-import { MatFormFieldModule,MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';//form-field
+import { MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';//form-field
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';//雙向連結要加FormsModule
 import { MatSidenavModule } from '@angular/material/sidenav';//sidemodule
 import { MatTableModule } from '@angular/material/table';//table
@@ -28,9 +29,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatCheckboxModule } from '@angular/material/checkbox';//checkbox
 import { MatGridListModule } from '@angular/material/grid-list';//gridlist
 import { MatStepperModule } from '@angular/material/stepper';//stepper
-import { MatDialogModule} from '@angular/material/dialog';//dialog
-import { MatRadioModule} from '@angular/material/radio';//radio
-import { MatTabsModule} from '@angular/material/tabs';//tabs
+import { MatDialogModule } from '@angular/material/dialog';//dialog
+import { MatRadioModule } from '@angular/material/radio';//radio
+import { MatTabsModule } from '@angular/material/tabs';//tabs
 import { MatSelectModule } from '@angular/material/select';
 
 //primeng
@@ -51,10 +52,13 @@ import { AddCartDialogComponent } from './shop/add-cart-dialog/add-cart-dialog.c
 import { AppleDialogComponent } from './shop/apple-dialog/apple-dialog.component';
 import { GetTableComponent } from './get-table/get-table.component';
 import { PrimengComponemt } from './primeng/primeng.component';
-import { GetTable2Component } from './get-table2/get-table2.component';
-import { EditDialogComponent } from './get-table2/edit-dialog/edit-dialog.component';
 import { PostApiComponent } from './post-api/post-api.component';
 import { PatchApiComponent } from './patch-api/patch-api.component';
+import { DeleteApiComponent } from './delete-api/delete-api.component';
+import { ApiComponent } from './api/api.component';
+import { GetApiComponent } from './get-api/get-api.component';
+import { EditDialogComponent } from './get-api/edit-dialog/edit-dialog.component';
+import { CalculateComponent } from './calculate/calculate.component';
 
 export const TW_FORMATS = {
   parse: {
@@ -83,10 +87,13 @@ export const TW_FORMATS = {
     AppleDialogComponent,
     PrimengComponemt,
     GetTableComponent,
-    GetTable2Component,
     EditDialogComponent,
     PostApiComponent,
     PatchApiComponent,
+    DeleteApiComponent,
+    ApiComponent,
+    GetApiComponent,
+    CalculateComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,6 +103,7 @@ export const TW_FORMATS = {
     MatMenuModule,
     MatCardModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatAutocompleteModule,
     MatInputModule,
     MatIconModule,
@@ -120,48 +128,57 @@ export const TW_FORMATS = {
     MatTreeModule,
     ButtonModule,
     ToastModule,
-    HttpClientModule,//需在BrowserModule之後
+    HttpClientModule,// 需在BrowserModule之後
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path:"form",component:FormComponent}
+      { path: "form", component: FormComponent }
     ]),
     RouterModule.forRoot([
-      {path:"table",component:TableComponemt}
+      { path: "table", component: TableComponemt }
     ]),
     RouterModule.forRoot([
-      {path:"position",component:PositionComponent}
+      { path: "position", component: PositionComponent }
     ]),
     RouterModule.forRoot([
-      {path:"manager",component:ManagerComponent}
+      { path: "manager", component: ManagerComponent }
     ]),
     RouterModule.forRoot([
-      {path:"survey",component:SurveyComponent}
+      { path: "survey", component: SurveyComponent }
     ]),
     RouterModule.forRoot([
-      {path:"shop",component:ShopComponent}
+      { path: "shop", component: ShopComponent }
     ]),
     RouterModule.forRoot([
-      {path:"primeng",component:PrimengComponemt}
+      { path: "primeng", component: PrimengComponemt }
     ]),
     RouterModule.forRoot([
-      {path:"GetTable",component:GetTableComponent}
+      { path: "GetTable", component: GetTableComponent }
     ]),
     RouterModule.forRoot([
-      {path:"GetTable2",component:GetTable2Component}
+      { path: "postApi", component: PostApiComponent }
     ]),
     RouterModule.forRoot([
-      {path:"postApi",component:PostApiComponent}
+      { path: "patchApi", component: PatchApiComponent }
     ]),
     RouterModule.forRoot([
-      {path:"patchApi",component:PatchApiComponent}
+      { path: "deleteApi", component: DeleteApiComponent }
+    ]),
+    RouterModule.forRoot([
+      { path: "getApi", component: GetApiComponent }
+    ]),
+    RouterModule.forRoot([
+      { path: "api", component: ApiComponent }
+    ]),
+    RouterModule.forRoot([
+      { path: "calculate", component: CalculateComponent }
     ]),
   ],
 
   providers: [
     // {provide: MAT_DATE_LOCALE, useValue: 'zh-TW'},//改成中文
-    { provide: MAT_DATE_FORMATS, useValue: TW_FORMATS },
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'} }
+    // { provide: MAT_DATE_FORMATS, useValue: TW_FORMATS },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } }
   ],
   bootstrap: [AppComponent]
 })

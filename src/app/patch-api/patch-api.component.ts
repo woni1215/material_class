@@ -26,12 +26,7 @@ export class PatchApiComponent implements OnInit {
     private fb: FormBuilder,
     private HttpApi: HttpApiService,
   ) {
-    this.postData = this.fb.group({
-      id: '',
-      title: '',
-      body: '',
-      userId: ''
-    });
+    this.postData = this.fb.group({});
   }
 
   ngOnInit(): void {
@@ -47,7 +42,7 @@ export class PatchApiComponent implements OnInit {
   showData(dataSource: any, data: any) {
     dataSource.data = data; //將資料帶入
     // console.log(data)
-    dataSource.sort = this.sort;
+    // dataSource.sort = this.sort;
   }
 
     //修改User資料

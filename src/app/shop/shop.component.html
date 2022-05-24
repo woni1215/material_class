@@ -1,4 +1,4 @@
-<mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+<mat-tab-group mat-align-tabs="center" dynamicHeight>
   <mat-tab label="商品">
     <div class="nav">
       <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
@@ -10,8 +10,7 @@
         </mat-tree-node>
         <!-- This is the tree node template for expandable nodes -->
         <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
-          <button mat-icon-button matTreeNodeToggle
-                  [attr.aria-label]="'Toggle ' + node.name">
+          <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
             <mat-icon class="mat-icon-rtl-mirror">
               {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
             </mat-icon>
@@ -24,10 +23,11 @@
       <div class="row text-center">
         <div class="col">
           <mat-card class="shop-card">
-            <img src="\assets\img\Apple.jpg" alt="Apple" class="goods"/>
+            <img src="\assets\img\Apple.jpg" alt="Apple" class="goods" />
             <p>Apple</p>
-            <button mat-icon-button>
-              <mat-icon>favorite_border</mat-icon>
+            <!-- <section class="heart"></section> -->
+            <button mat-icon-button (click)="pressFave('Apple')">
+              <mat-icon>{{fave}}</mat-icon>
             </button>
             <button mat-icon-button (click)="openDialog()">
               <mat-icon>add_shopping_cart</mat-icon>
@@ -40,9 +40,9 @@
         </div>
         <div class="col">
           <mat-card class="shop-card">
-            <img src="\assets\img\Banana.jpg" alt="Banana" class="goods"/>
+            <img src="\assets\img\Banana.jpg" alt="Banana" class="goods" />
             <p>Banana</p>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="pressFave('Banana')">
               <mat-icon>favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="openDialog()">
@@ -55,10 +55,10 @@
         </div>
         <div class="col">
           <mat-card class="shop-card">
-            <img src="\assets\img\Orange.jpg" alt="Orange" class="goods"/>
+            <img src="\assets\img\Orange.jpg" alt="Orange" class="goods" />
             <p>Orange</p>
-            <button mat-icon-button>
-              <mat-icon>favorite</mat-icon>
+            <button mat-icon-button (click)="pressFave('Orange')">
+              <mat-icon>favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="openDialog()">
               <mat-icon>add_shopping_cart</mat-icon>
@@ -72,9 +72,9 @@
       <div class="row text-center">
         <div class="col">
           <mat-card class="shop-card">
-            <img src="\assets\img\Pumpkin.jpg" alt="Pumpkin" class="goods"/>
+            <img src="\assets\img\Pumpkin.jpg" alt="Pumpkin" class="goods" />
             <p>Pumpkin</p>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="pressFave('Pumpkin')">
               <mat-icon>favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="openDialog()">
@@ -87,10 +87,10 @@
         </div>
         <div class="col">
           <mat-card class="shop-card">
-            <img src="\assets\img\Carrots.jpg" alt="Carrots" class="goods"/>
+            <img src="\assets\img\Carrots.jpg" alt="Carrots" class="goods" />
             <p>Carrots</p>
-            <button mat-icon-button>
-              <mat-icon>favorite</mat-icon>
+            <button mat-icon-button (click)="pressFave('Carrots')">
+              <mat-icon>favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="openDialog()">
               <mat-icon>add_shopping_cart</mat-icon>
@@ -102,9 +102,9 @@
         </div>
         <div class="col">
           <mat-card class="shop-card">
-            <img src="\assets\img\Broccoli.jpg" alt="Broccoli" class="goods"/>
+            <img src="\assets\img\Broccoli.jpg" alt="Broccoli" class="goods" />
             <p>Broccoli</p>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="pressFave('Broccoli')">
               <mat-icon>favorite_border</mat-icon>
             </button>
             <button mat-icon-button (click)="openDialog()">
@@ -120,53 +120,53 @@
   </mat-tab>
   <mat-tab label="喜歡商品">
     <mat-accordion>
-    <mat-expansion-panel hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          This is the expansion title
-        </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
-    </mat-expansion-panel>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            This is the expansion title
+          </mat-panel-title>
+          <mat-panel-description>
+            This is a summary of the content
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>This is the primary content of the panel.</p>
+      </mat-expansion-panel>
     </mat-accordion>
   </mat-tab>
   <mat-tab label="購物車">
     <div>
       <div class="col-lg-12">
-          <mat-card>
-            <div class="row">
-              <div class="col-3">
-                <img src="\assets\img\Apple.jpg" alt="Apple" class="goods"/>
-              </div>
-              <div class="col-3">
-                <p>Apple</p>
-              </div>
-              <div class="col-3"></div>
-              <div class="col-3">
-                <button mat-icon-button>
-                  <mat-icon>add</mat-icon>
-                </button>
-                <mat-form-field floatLabel="never" appearance="outline" class="amount">
-                  <input matInput placeholder="1">
-                </mat-form-field>
-                <button mat-icon-button>
-                  <mat-icon>remove</mat-icon>
-                </button>
-                <button mat-icon-button>
-                  <mat-icon>delete</mat-icon>
-                </button>
-              </div>
-            </div>
-          </mat-card>
-      </div>
-      <div class="col-lg-12" >
         <mat-card>
           <div class="row">
             <div class="col-3">
-              <img src="\assets\img\Banana.jpg" alt="Banana" class="goods"/>
+              <img src="\assets\img\Apple.jpg" alt="Apple" class="goods" />
+            </div>
+            <div class="col-3">
+              <p>Apple</p>
+            </div>
+            <div class="col-3"></div>
+            <div class="col-3">
+              <button mat-icon-button>
+                <mat-icon>add</mat-icon>
+              </button>
+              <mat-form-field floatLabel="never" appearance="outline" class="amount">
+                <input matInput placeholder="1">
+              </mat-form-field>
+              <button mat-icon-button>
+                <mat-icon>remove</mat-icon>
+              </button>
+              <button mat-icon-button>
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <div class="col-lg-12">
+        <mat-card>
+          <div class="row">
+            <div class="col-3">
+              <img src="\assets\img\Banana.jpg" alt="Banana" class="goods" />
             </div>
             <div class="col-3">
               <p>Banana</p>

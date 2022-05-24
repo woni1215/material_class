@@ -1,0 +1,48 @@
+<div class="row">
+  <h2>Delete</h2>
+  <div class="row text-center">
+    <mat-card>
+      <form [formGroup]="deleteData">
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field>
+              <mat-label>id</mat-label>
+              <input matInput placeholder="id" type="text" formControlName="id" [(ngModel)]="this.data.id"
+                ngDefaultControl>
+            </mat-form-field>
+          </div>
+        </div>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="deleteAPIRequest()">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+  <div class="row">
+    <mat-card>
+      <h2>Delete Data</h2>
+      <table mat-table [dataSource]="DataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>id.</th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef>title</th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="body">
+          <th mat-header-cell *matHeaderCellDef>body</th>
+          <td mat-cell *matCellDef="let element"> {{element.body}} </td>
+        </ng-container>
+        <ng-container matColumnDef="userId">
+          <th mat-header-cell *matHeaderCellDef>userId</th>
+          <td mat-cell *matCellDef="let element"> {{element.userId}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="Col"></tr>
+        <tr mat-row *matRowDef="let row; columns: Col;"></tr>
+      </table>
+    </mat-card>
+  </div>
+</div>

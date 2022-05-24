@@ -24,9 +24,11 @@
   <button mat-icon-button (click)="sideNav.toggle()">
     <mat-icon>{{ sideNav.opened ? 'close' : 'menu' }}</mat-icon>
   </button>
-  <img width="40" alt="Angular Logo"
-    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
-  <span>成績系統</span>
+  <a href="http://localhost:4200/">
+    <img width="40" alt="Angular Logo"
+      src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+    <span>成績系統</span>
+  </a>
   <div class="spacer"></div>
   <!--加入空格，可以把icon推到右邊-->
   <button mat-icon-button [matMenuTriggerFor]="messageMenu" #menuTrigger="matMenuTrigger">
@@ -65,7 +67,7 @@
       <mat-list-item mat-list-item routerLink="table" routerLinkActive="active"
         [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
-        <div mat-line>Table</div>
+        <div mat-line>表格</div>
       </mat-list-item>
 
       <mat-list-item mat-list-item routerLink="position" routerLinkActive="active"
@@ -78,22 +80,23 @@
         <mat-icon mat-list-icon>shopping_cart</mat-icon>
         <div mat-line>購物</div>
       </mat-list-item>
+
       <mat-list-item mat-list-item routerLink="primeng" routerLinkActive="active"
         [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>dashboard</mat-icon>
         <div mat-line>primeng</div>
       </mat-list-item>
 
-      <mat-list-item mat-list-item routerLink="GetTable" routerLinkActive="active"
+      <!-- <mat-list-item mat-list-item routerLink="GetTable" routerLinkActive="active"
         [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
         <div mat-line>Get Table</div>
-      </mat-list-item>
+      </mat-list-item> -->
 
-      <mat-list-item mat-list-item routerLink="GetTable2" routerLinkActive="active"
+      <!-- <mat-list-item mat-list-item routerLink="getApi" routerLinkActive="active"
         [routerLinkActiveOptions]="{exact:true}">
         <mat-icon mat-list-icon>view_list</mat-icon>
-        <div mat-line>Get Table2</div>
+        <div mat-line>GetApi</div>
       </mat-list-item>
 
       <mat-list-item mat-list-item routerLink="postApi" routerLinkActive="active"
@@ -107,6 +110,23 @@
         <mat-icon mat-list-icon>view_list</mat-icon>
         <div mat-line>PatchApi</div>
       </mat-list-item>
+
+      <mat-list-item mat-list-item routerLink="deleteApi" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>view_list</mat-icon>
+        <div mat-line>DeleteApi</div>
+      </mat-list-item> -->
+
+      <mat-list-item mat-list-item routerLink="api" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>api</mat-icon>
+        <div mat-line>Api</div>
+      </mat-list-item>
+
+      <mat-list-item mat-list-item routerLink="calculate" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <mat-icon mat-list-icon>calculate</mat-icon>
+        <div mat-line>Calculate</div>
+      </mat-list-item>
+
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>

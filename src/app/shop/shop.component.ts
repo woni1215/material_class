@@ -70,13 +70,33 @@ export class ShopComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog
-    ) {
+  ) {
     this.dataSource.data = TREE_DATA;
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
   ngOnInit(): void {
+  }
+
+  goods: any[] = [
+    { name: 'Apple', fave: 'favorite_border' },
+    { name: 'Banana', fave: 'favorite_border' },
+    { name: 'Orange', fave: 'favorite_border' },
+    { name: 'Pumpkin', fave: 'favorite_border' },
+    { name: 'Carrots', fave: 'favorite_border' },
+    { name: 'Broccoli', fave: 'favorite_border' }
+  ]
+  fave: string = 'favorite_border';
+  pressFave(goods: string) {
+    if (this.fave == 'favorite_border') {
+      this.fave = 'favorite'
+      console.log('fave: ' + this.fave)
+    }
+    else {
+      this.fave = 'favorite_border'
+      console.log('fave: ' + this.fave)
+    }
   }
 
   openDialog() {
